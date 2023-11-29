@@ -35,3 +35,5 @@ print(f'The GitHub account age is => {account_age}')
 # convert the account age to years
 account_age_years = convert_timedelta_to_years(account_age)
 print(f'The GitHub account age in years is => {account_age_years}')
+
+input('Press ENTER to exit...')
