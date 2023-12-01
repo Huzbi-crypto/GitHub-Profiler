@@ -4,6 +4,8 @@
 
 I just had an impulse to create a program/script that can calculate the age of a GitHub user's account based on their creation date. I know that GitHub has a feature that shows the age of an account, but I wanted to create my own program/script that can do the same thing.
 
+Now, I want to add more features to this program/script, such as showing the last commit date of the user and the last seen date of the user. This impulse of mine has just started, so I will add more features to this program/script in the future.
+
 ## How to use
 
 1. Clone this repository
