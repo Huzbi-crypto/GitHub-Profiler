@@ -15,5 +15,5 @@ Now, I want to add more features to this program/script, such as showing the las
 
 ## Future plans
 
-- [ ] Add a feature of showing the last commit date of the user.
+- [x] Add a feature of showing the last commit date of the user.
 - [ ] Add a feature of showing the last seen date of the user.
