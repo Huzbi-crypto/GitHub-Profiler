@@ -1,13 +1,19 @@
-from urllib.parse import urlparse
+import os
 from github import Github
+from dotenv import load_dotenv
+from urllib.parse import urlparse
 from datetime import datetime, timezone
+
+# load the GitHub personal access token from the .env file
+load_dotenv()
+github_token = os.getenv('GITHUB_PERSONAL_ACCESS_TOKEN')
 
 def get_username_from_url(url):
     parsed_url = urlparse(url)
     return parsed_url.path.split('/')[-1]
 
 def get_user_info(username):
-    g = Github()
+    g = Github(github_token)
     creation_date = g.get_user(username).created_at
     return creation_date
 
@@ -20,7 +26,7 @@ def convert_timedelta_to_years(timedelta):
     return round(age_in_years, 2) 
 
 def get_last_commit_date(username):
-    g = Github()
+    g = Github(github_token)
     user = g.get_user(username)
     repos = user.get_repos()
     last_commit_date = None
@@ -32,6 +38,15 @@ def get_last_commit_date(username):
                 last_commit_date = last_commit.commit.author.date
     return last_commit_date
 
+def get_last_seen_date(username):
+    g = Github()
+    user = g.get_user(username)
+    events = user.get_events()
+    last_seen_date = None
+    for event in events:
+        if last_seen_date is None or event.created_at > last_seen_date:
+            last_seen_date = event.created_at
+    return last_seen_date
 
 # get the user's URL
 url = input('Enter the GitHub user\'s URL: ')
@@ -53,5 +68,9 @@ print(f'The GitHub account age in years is => {account_age_years}')
 # get the last commit date
 last_commit_date = get_last_commit_date(username)
 print(f'The GitHub last commit date is => {last_commit_date}')
+
+# get the last seen date
+last_seen_date = get_last_seen_date(username)
+print(f'The GitHub last seen date is => {last_seen_date}')
 
 input('Press ENTER to exit...')

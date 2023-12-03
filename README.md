@@ -13,9 +13,18 @@ Now, I want to add more features to this program/script, such as showing the las
 3. Run the script using `python main.py`.
 4. Enter the username of the GitHub account that you want to calculate the age of.
 
-**Note:** If you get an error related to rate limit, you can create a Github token and add it into wherever the instance of the `Github` class is created in `main.py`. You can create a Github token [here](https://github.com/settings/tokens).
+### Prerequisites
+ You will have to create a `.env` file with the following content:
+
+```env
+GITHUB_PERSONAL_ACCESS_TOKEN = <YOUR_PERSONAL_GITHUB_TOKEN>   
+```
+
+You can create a personal access token by following the instructions [here](https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token). Make sure to select the `user` scope when creating the token.
+
+Or, you can edit the code and replace the `os.getenv("GITHUB_PERSONAL_ACCESS_TOKEN")` with your personal access token. If you are okay with getting rate limit, you can remove the first three lines after importing libraries and removing the variable from all `Github` objects.
 
 ## Future plans
 
 - [x] Add a feature of showing the last commit date of the user.
-- [ ] Add a feature of showing the last seen date of the user.
+- [x] Add a feature of showing the last seen date of the user.
