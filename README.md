@@ -14,6 +14,7 @@ Now, I want to add more features to this program/script, such as showing the las
 4. Enter the username of the GitHub account that you want to calculate the age of.
 
 ### Prerequisites
+
  You will have to create a `.env` file with the following content:
 
 ```env
