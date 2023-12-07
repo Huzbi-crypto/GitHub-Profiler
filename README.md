@@ -1,4 +1,4 @@
-# User Age GitHub Calculator
+# GitHub User Info Finder
 
 ## Overview
 
@@ -10,8 +10,19 @@ Now, I want to add more features to this program/script, such as showing the las
 
 1. Clone this repository
 2. Install the required packages using `pip install -r requirements.txt`.
-3. Run the script using `python main.py`.
-4. Enter the username of the GitHub account that you want to calculate the age of.
+3. Enter the name of the GitHub user as an argument when running the program/script:
+
+```bash
+python GitHub-User_Info.py <GITHUB_USER_NAME>
+```
+
+4. You can also enter the name as input when running the program/script:
+
+```bash
+python GitHub-User_Info.py
+```
+
+5. It will ask for GitHub API token as an optional input. If you don't have one, you can just press enter and it will use the default token. If you want to use your own token, you can enter it and it will use your token instead of the default token. That way, you can avoid getting rate limit.
 
 ### Prerequisites
 
@@ -29,3 +40,7 @@ Or, you can edit the code and replace the `os.getenv("GITHUB_PERSONAL_ACCESS_TOK
 
 - [x] Add a feature of showing the last commit date of the user.
 - [x] Add a feature of showing the last seen date of the user.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
